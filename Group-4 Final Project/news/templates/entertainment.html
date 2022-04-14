@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+{% block content %}
+<body>
+  <h2>Entertainment news</h2>
+  <hr />
+  <div class="scrollmenu">
+    {% for headline in entertainment_headlines %}
+
+    <a href="/summarize/entertainment/{{headline.id}}">
+      <div class="container">
+        <img src="{{headline.image}}" alt="Nature" style="width: 100%" />
+        <div class="content">
+          <p class="h2">{{headline.name}}</p>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  <hr />
+</body>
+
+{% endblock content %}

@@ -1,0 +1,180 @@
+{% extends 'main.html' %} {% block content %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      div.scrollmenu {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+      }
+
+      div.scrollmenu a {
+        display: inline-block;
+        color: white;
+        padding: 14px;
+        text-decoration: none;
+      }
+
+      div.scrollmenu a:hover {
+        background-color: #888;
+      }
+      img {
+        display: block;
+        max-width: 500px;
+        max-height: 500px;
+        background-size: auto;
+      }
+      .container {
+        position: relative;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .container {
+        position: relative;
+
+        margin: 0 auto;
+      }
+
+      .container .content {
+        position: absolute;
+        bottom: 0;
+        background: rgb(0, 0, 0); /* Fallback color */
+        background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+      }
+      p.hl {
+        white-space: initial;
+      }
+    </style>
+  </head>
+  <body>
+    <br /><br /><br />
+    <h2>General news</h2>
+    <hr />
+    <div class="scrollmenu">
+      {% for headline in general_headlines %}
+
+      <a href="/summarize/general/{{headline.id}}">
+        <div class="container">
+          <figure class="probootstrap-image"><img src="{{headline.image}}" alt="Nature" style="width: 100%" class="img-responsive"/></figure>
+          <div class="content">
+            <p class="hl">{{headline.name}}</p>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <hr />
+
+    <h2>Entertainment news</h2>
+    <hr />
+    <div class="scrollmenu">
+      {% for headline in entertainment_headlines %}
+
+      <a href="/summarize/entertainment/{{headline.id}}">
+        <div class="container">
+          <figure class="probootstrap-image"><img src="{{headline.image}}" alt="Nature" style="width: 100%" class="img-responsive"/></figure>
+          <div class="content">
+            <p class="hl">{{headline.name}}</p>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <hr />
+
+    <h2>Health news</h2>
+    <hr />
+    <div class="scrollmenu">
+      {% for headline in health %}
+
+      <a href="/summarize/health/{{headline.id}}">
+        <div class="container">
+          <figure class="probootstrap-image"><img src="{{headline.image}}" alt="Nature" style="width: 100%" class="img-responsive"/></figure>
+          <div class="content">
+            <p class="hl">{{headline.name}}</p>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <hr />
+
+    <h2>Business news</h2>
+    <hr />
+    <div class="scrollmenu">
+      {% for headline in business %}
+
+      <a href="/summarize/business/{{headline.id}}">
+        <div class="container">
+          <figure class="probootstrap-image"><img src="{{headline.image}}" alt="Nature" style="width: 100%" class="img-responsive"/></figure>
+          <div class="content">
+            <p class="hl">{{headline.name}}</p>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <hr />
+    <h2>Sports news</h2>
+    <hr />
+    <div class="scrollmenu">
+      {% for headline in sports %}
+
+      <a href="/summarize/sports/{{headline.id}}">
+        <div class="container">
+          <figure class="probootstrap-image"><img src="{{headline.image}}" alt="Nature" style="width: 100%" class="img-responsive"/></figure>
+          <div class="content">
+            <p class="hl">{{headline.name}}</p>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <hr />
+    <hr />
+
+    <h2>Science news</h2>
+    <hr />
+    <div class="scrollmenu">
+      {% for headline in science %}
+
+      <a href="/summarize/science/{{headline.id}}">
+        <div class="container">
+          <figure class="probootstrap-image"><img src="{{headline.image}}" alt="Nature" style="width: 100%" class="img-responsive"/></figure>
+          <div class="content">
+            <p class="hl">{{headline.name}}</p>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <hr />
+    <h2>Technology news</h2>
+    <hr />
+    <div class="scrollmenu">
+      {% for headline in technology %}
+
+      <a href="/summarize/technology/{{headline.id}}">
+        <div class="container">
+          <figure class="probootstrap-image"><img src="{{headline.image}}" alt="Nature" style="width: 100%" class="img-responsive"/></figure>
+          <div class="content">
+            <p class="hl">{{headline.name}}</p>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <hr />
+  </body>
+</html>
+{% endblock content %}
